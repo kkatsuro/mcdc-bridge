@@ -1,0 +1,14 @@
+{
+  "author": "meta",
+  "min_bot_version": "3.4.0",
+  "description": "pigman is discord-minecraft bot's cog",
+  "hidden": false,
+  "install_msg": "we're installing",
+  "requirements": [],
+  "short": "pigman",
+  "end_user_data_statement": "end user data statement, todo: something with this statement",
+  "tags": [
+    "utils",
+    "minecraft"
+  ]
+}

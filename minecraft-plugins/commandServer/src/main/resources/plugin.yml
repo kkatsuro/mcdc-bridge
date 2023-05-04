@@ -1,0 +1,4 @@
+name: CommandServer
+version: '${project.version}'
+main: x.commandserver.CommandServer
+api-version: 1.19

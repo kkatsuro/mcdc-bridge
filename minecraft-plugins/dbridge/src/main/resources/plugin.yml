@@ -1,0 +1,9 @@
+name: DiscBridge
+version: '${project.version}'
+main: x.dbridge.Discbridge
+api-version: 1.19
+depend: [CommandServer]
+commands:
+  cords:
+    description: save cords on discord
+    usage: /<command> [message]

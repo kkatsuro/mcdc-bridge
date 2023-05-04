@@ -1,0 +1,32 @@
+package x.dbridge;
+
+import net.kyori.adventure.text.TextComponent;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.logging.Logger;
+
+public class DiscordCommunicatePlayerQuitEvent implements Listener {
+    private final JavaPlugin plugin;
+    private final @NotNull Logger logger;
+
+    public DiscordCommunicatePlayerQuitEvent(JavaPlugin plugin) {
+        this.plugin = plugin;
+        logger = plugin.getLogger();
+    }
+    // unregister it when connection shuts down
+    @EventHandler()  // XXX: in which thread this event works?
+    public void PlayerQuitEvent(PlayerQuitEvent event) {
+        DBridgeChat DBChat = DBridgeChat.getInstance();
+        if (DBChat == null) {
+            return;
+        }
+
+        String nickname = ((TextComponent) event.getPlayer().displayName()).content();
+        DBChat.send(String.format("/event\tquit\t%s", nickname));
+    }
+}

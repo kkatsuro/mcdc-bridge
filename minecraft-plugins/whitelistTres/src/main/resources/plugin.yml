@@ -1,0 +1,5 @@
+name: WhitelistTres
+version: '${project.version}'
+main: x.whitelist.WhitelistTres
+api-version: 1.19
+depend: [CommandServer]
